@@ -3,10 +3,10 @@ The complete dataset of Molecular Dynamics Simulation data is host on Zenodo for
 The complete dataset of Molecular Dynamics of four compounds 14XS, 32, 80, and 41 is the Supplemental Material for the research "Integrating Structure-Based Genetic Algorithms and Deep Reinforcement Learning for the De Novo Discovery of Novel BACE1 Inhibitors".
 
 Specific DOIs to the respective Zenodo archives:
-+ 14XS: 10.5281/zenodo.17824216
-+ 32: 10.5281/zenodo.17824339
-+ 41: 10.5281/zenodo.17825420
-+ 80: 10.5281/zenodo.17826716
++ 14XS: 10.5281/zenodo.17824216 (https://zenodo.org/records/17824216)
++ 32: 10.5281/zenodo.17824339 (https://zenodo.org/records/17824339)
++ 41: 10.5281/zenodo.17825420 (https://zenodo.org/records/17825420)
++ 80: 10.5281/zenodo.17826716 (https://zenodo.org/records/17826716)
 
 ----------------------------------------------------------------------------------------------------
 Each of these compressed folders includes:
@@ -32,3 +32,4 @@ This folder also includes a sub-folder of additional analysis files and results 
 + All hydrogen bond occupancies of all replicates analyzed by VMD (h_bond_all.txt)
 
 + Detailed analysis of decomposition of MM/GBSA calculation and graph of top residue-specific contribution across all ligands
+
