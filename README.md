@@ -4,6 +4,7 @@ Synergistic de novo design of BACE1 inhibitors using structure-based evolution a
 This repository is the Supplemental Material to the research "Integrating Structure-Based Genetic Algorithms and Deep Reinforcement Learning for the De Novo Discovery of Novel BACE1 Inhibitors".
 
 =====================================================================================================================
+
 The repository comprises five main component folders:
 
 +) 0. Curated Data: includes starting dataset for both pathway runs.
