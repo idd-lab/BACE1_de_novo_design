@@ -27,3 +27,5 @@ Specific DOIs to the respective Zenodo archives:
 - 32: 10.5281/zenodo.17824339
 - 41: 10.5281/zenodo.17825420
 - 80: 10.5281/zenodo.17826716
+
+**Usage: Please cite the main manuscript and the specific Zenodo DOIs if you utilize these datasets.**
