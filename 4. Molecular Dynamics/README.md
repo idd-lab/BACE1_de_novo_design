@@ -7,6 +7,7 @@ Specific DOIs to the respective Zenodo archives:
 + 32: 10.5281/zenodo.17824339 (https://zenodo.org/records/17824339)
 + 41: 10.5281/zenodo.17825420 (https://zenodo.org/records/17825420)
 + 96: 10.5281/zenodo.18851235 (https://zenodo.org/records/18851235)
++ 73: 10.5281/zenodo.18851674 (https://zenodo.org/records/18851674)
 
 ----------------------------------------------------------------------------------------------------
 Each of these compressed folders includes:
@@ -32,5 +33,6 @@ This folder also includes a sub-folder of additional analysis files and results 
 + All hydrogen bond occupancies of all replicates analyzed by VMD (h_bond_all.txt)
 
 + Detailed analysis of decomposition of MM/GBSA calculation and graph of top residue-specific contribution across all ligands
+
 
 
