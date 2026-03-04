@@ -1,5 +1,5 @@
 # BACE1_de_novo_design**
-**Integrating Structure-Based Genetic Algorithms and Deep Reinforcement Learning for the De Novo Discovery of Novel BACE1 Inhibitor Scaffolds**
+**Integrating Structure-Based Genetic Algorithms and Deep Reinforcement Learning for the De Novo Design of Novel BACE1 Inhibitor Scaffolds**
 Supplemental Material Repository
 
 This repository contains the supplemental information, parameter files, and data summaries for the research article: "Integrating Structure-Based Genetic Algorithms and Deep Reinforcement Learning for the De Novo Discovery of Novel BACE1 Inhibitors".
@@ -26,6 +26,7 @@ Specific DOIs to the respective Zenodo archives:
 - 14XS: 10.5281/zenodo.17824216
 - 32: 10.5281/zenodo.17824339
 - 41: 10.5281/zenodo.17825420
-- 80: 10.5281/zenodo.17826716
+- 96: 10.5281/zenodo.18851235 (https://zenodo.org/records/18851235)
+- 73: 10.5281/zenodo.18851674 (https://zenodo.org/records/18851674)
 
 **Usage: Please cite the main manuscript and the specific Zenodo DOIs if you utilize these datasets.**
