@@ -16,7 +16,7 @@ It includes the dataset of inhibitors and Ki curated from BindingDB (inhibitors_
 You can find the specific link or DOI to the data on Zenodo in the README file within the 1.Structure Based Design folder, or you can access it here: https://zenodo.org/records/17823717 (DOI: 10.5281/zenodo.17823717)
 See the README file in the directory for specific content.
 
-2. Ligand Based Design: includes data on the fragment library of LBDD, training molecules, designed molecules from this pathway, scoring, all three Colab notebooks (Data Processing, QSAR Modelling, and Molecule Generation), code, datasets, graphs, and supporting information.
+2. Ligand Based Design: includes data on the fragment library of LBDD, training molecules, designed molecules from this pathway, re-discovered molecules, scoring, all three Colab notebooks (Data Processing, QSAR Modelling, and Molecule Generation), code, datasets, graphs, and supporting information.
 Details are in specific folders.
 
 3. Hit Validation: comprises data on ADME screening of hit compounds, docking results and files of each candidate (all three replicates), leads' poses for examination (including a comprehensive output file from PLIP server listing all interactions), and the Tanimoto Scores calculations of each pathway.
@@ -27,7 +27,7 @@ Specific DOIs to the respective Zenodo archives:
 - 14XS: 10.5281/zenodo.17824216
 - 32: 10.5281/zenodo.17824339
 - 41: 10.5281/zenodo.17825420
-- 96: 10.5281/zenodo.18851235 (https://zenodo.org/records/18851235)
-- 73: 10.5281/zenodo.18851674 (https://zenodo.org/records/18851674)
+- 96: 10.5281/zenodo.18851235 
+- 73: 10.5281/zenodo.18851674 
 
 **Usage: Please cite the main manuscript and the specific Zenodo DOIs if you utilize these datasets.**
