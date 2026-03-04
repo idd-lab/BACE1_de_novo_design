@@ -1,5 +1,6 @@
 # BACE1_de_novo_design**
-**Integrating Structure-Based Genetic Algorithms and Deep Reinforcement Learning for the De Novo Design of Novel BACE1 Inhibitor Scaffolds**
+**Integrating Structure-Based Genetic Algorithms and Deep Reinforcement Learning for De Novo Design of Novel BACE1 Inhibitors**
+
 Supplemental Material Repository
 
 This repository contains the supplemental information, parameter files, and data summaries for the research article: "Integrating Structure-Based Genetic Algorithms and Deep Reinforcement Learning for the De Novo Discovery of Novel BACE1 Inhibitors".
