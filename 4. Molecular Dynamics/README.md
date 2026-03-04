@@ -27,12 +27,14 @@ Each of these compressed folders includes:
 + VMD's hydrogen bonds occupancies processed files and images: hbonds.dat, hbonds-details.dat, and **_rep*_dyad.png provide information on ligand's hydrogen bond interactions with the catalytic dyad, and hbonds_protein.dat, hbonds-details_protein.dat, and **_protein_rep*.png provide information on ligand's hydrogen bond interactions with any residuals
 ----------------------------------------------------------------------------------------------------
 
-This folder also includes a sub-folder of additional analysis files and results ('Other_data'), comprising:
+This folder also includes a sub-folder of additional analysis files and results ('Other_Data_And_Code'), comprising:
 + Graphs of protein RMSD and ligand RMSD of each ligand
 + An analysis of MM/GBSA calculation (Table_S3_MMGBSA_Summary.csv)
-+ All hydrogen bond occupancies of all replicates analyzed by VMD (h_bond_all.txt)
++ All hydrogen bond occupancies of all replicates analyzed by VMD (h_bond_occupancy_all.txt)
++ Specific parameter files for MD production (MDP files)
++ Specific code and workflow for MD preparation, production, and processing
++ A Colab Notebook on MD production
 
-+ Detailed analysis of decomposition of MM/GBSA calculation and graph of top residue-specific contribution across all ligands
 
 
 
