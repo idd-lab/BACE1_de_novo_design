@@ -1,0 +1,30 @@
+name: idd_bace1_pipeline
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10  # Highly stable for scientific computing
+  - pip
+  # Cheminformatics & Data Science core
+  - rdkit=2025.03.2
+  - scikit-learn=1.6.1
+  - xgboost=2.1.0
+  - pandas
+  - numpy
+  - scipy
+  - matplotlib
+  - seaborn
+  # Deep Learning framework
+  - pytorch=2.6.0
+  - pytorch-cuda=11.8  # Adjust based on local NVIDIA driver
+  # Structural Biology & Prep tools
+  - openmm
+  - pdbfixer=1.10
+  - openbabel
+  # PyPI specific packages
+  - pip:
+    - dimorphite-dl==2.0.2
+    - gmx_MMPBSA==1.6.4
+    - jupyterlab
