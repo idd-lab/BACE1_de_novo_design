@@ -1,0 +1,80 @@
+acpype -i 96_h.pdb -c bcc -n 1 -a gaff
+
+gmx editconf -f 96_h.acpype/96_h_GMX.gro -o 96_h_GMX.pdb
+
+cp 96_h.acpype/96_h_GMX.itp .
+cp 96_h.acpype/96_h_GMX.pdb .
+
+gmx pdb2gmx -f protein_h.pdb -o protein_processed.gro -water tip3p -ff amber99sb-ildn
+
+gmx editconf -f protein_processed.gro -o protein_temp.pdb
+
+cat protein_temp.pdb 96_h_GMX.pdb > complex_merged.pdb
+
+grep -v "^END" protein_temp.pdb > complex_merged.pdb
+cat 96_h_GMX.pdb >> complex_merged.pdb
+
+gmx editconf -f complex_merged.pdb -o complex.gro
+
+gmx genrestr -f 96_h_GMX.pdb -o posre_ligand.itp -fc 1000 1000 1000 (Select "0")
+
+
+- Edit tolpol.top:
+
+; Include forcefield parameters,
+#include "96_h_GMX.itp"
+
+; Ligand Position Restraints
+#ifdef POSRES_LIGAND
+#include "posre_ligand.itp"
+#endif
+
+[ molecules ]
+; Compound        #mols
+Protein           1
+UNL               1
+
+
+gmx editconf -f complex.gro -o box.gro -c -d 1.0 -bt cubic
+
+gmx solvate -cp box.gro -cs spc216.gro -p topol.top -o solv.gro
+
+- Edit itp file:
+
+[ moleculetype ]
+; Name            nrexcl
+UNL               3
+
+gmx grompp -f ions.mdp -c solv.gro -p topol.top -o ions.tpr -maxwarn 1
+
+echo "SOL" | gmx genion -s ions.tpr -o solv_ions.gro -p topol.top -pname NA -nname CL -neutral
+
+echo -e "1 | 13 \n name 20 Protein_LIG \n q" | gmx make_ndx -f solv_ions.gro -o index.ndx
+
+# Min 1 (Loose) - Note the -r solv_ions.gro
+gmx grompp -f em_1.mdp -c solv_ions.gro -r solv_ions.gro -p topol.top -n index.ndx -o em_1.tpr
+gmx mdrun -v -deffnm em_1
+
+# Min 2 (Tight)
+gmx grompp -f em_2.mdp -c em_1.gro -r em_1.gro -p topol.top -n index.ndx -o em_2.tpr
+gmx mdrun -v -deffnm em_2
+
+# NVT
+gmx grompp -f nvt.mdp -c em_2.gro -r em_2.gro -p topol.top -n index.ndx -o nvt.tpr
+gmx mdrun -v -deffnm nvt
+
+# NPT
+gmx grompp -f npt.mdp -c nvt.gro -r nvt.gro -p topol.top -n index.ndx -o npt.tpr
+gmx mdrun -v -deffnm npt
+
+Step 9: Generate Production TPRs (The Upload Files)
+
+# Replicate 1
+gmx grompp -f md_rep1.mdp -c npt.gro -t npt.cpt -p topol.top -n index.ndx -o md_rep1.tpr -maxwarn 1
+
+# Replicate 2
+gmx grompp -f md_rep2.mdp -c npt.gro -t npt.cpt -p topol.top -n index.ndx -o md_rep2.tpr -maxwarn 1
+
+# Replicate 3
+gmx grompp -f md_rep3.mdp -c npt.gro -t npt.cpt -p topol.top -n index.ndx -o md_rep3.tpr -maxwarn 1
+
