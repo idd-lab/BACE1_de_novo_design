@@ -1,0 +1,58 @@
+List of protein-ligand interactions
+-----------------------------------
+
+
+
+
+PDB code: 14XS_complex
+==============
+
+
+Hydrogen bonds
+--------------
+
+       <----- A T O M   1 ----->       <----- A T O M   2 ----->
+
+       Atom Atom Res  Res              Atom Atom Res  Res
+        no  name name  no  Chain        no  name name  no  Chain  Distance
+    1     0  N1  UNL    1         ---    34  O   GLY   39          2.986
+
+
+Non-bonded contacts
+-------------------
+
+       <----- A T O M   1 ----->       <----- A T O M   2 ----->
+
+       Atom Atom Res  Res              Atom Atom Res  Res
+        no  name name  no  Chain        no  name name  no  Chain  Distance
+    1    87  CB  SER   40         ---    26  O1  UNL    1          3.600
+    2    74  CD1 ILE  115         ---    24  C22 UNL    1          3.606
+    3    72  CG1 ILE  115         ---    24  C22 UNL    1          3.857
+    4    74  CD1 ILE  115         ---    23  C21 UNL    1          3.541
+    5    54  NE2 GLN   78         ---    21  C19 UNL    1          3.484
+    6    54  NE2 GLN   78         ---    20  C18 UNL    1          3.539
+    7    54  NE2 GLN   78         ---    19  C17 UNL    1          3.475
+    8    44  CE2 TYR   76         ---    19  C17 UNL    1          3.594
+    9   117  CD1 ILE  123         ---    17  C15 UNL    1          3.610
+   10    64  CE1 PHE  113         ---    17  C15 UNL    1          3.674
+   11    64  CE1 PHE  113         ---    16  C14 UNL    1          3.875
+   12    82  OD2 ASP  224         ---    15  C13 UNL    1          3.392
+   13    32  CA  GLY   39         ---    15  C13 UNL    1          3.786
+   14    82  OD2 ASP  224         ---    14  C12 UNL    1          3.563
+   15    34  O   GLY   39         ---    14  C12 UNL    1          3.756
+   16    32  CA  GLY   39         ---    14  C12 UNL    1          3.724
+   17    82  OD2 ASP  224         ---    13  C11 UNL    1          3.387
+   18   135  NH1 ARG  231         ---    12  C10 UNL    1          3.361
+   19   125  CD1 ILE  222         ---    12  C10 UNL    1          3.552
+   20    87  CB  SER   40         ---    11  C9  UNL    1          3.726
+   21    34  O   GLY   39         ---    11  C9  UNL    1          3.559
+   22    94  CG1 VAL   74         ---     9  C7  UNL    1          3.889
+   23   106  NE1 TRP   81         ---     8  C6  UNL    1          3.284
+   24    41  CD1 TYR   76         ---     8  C6  UNL    1          3.549
+   25    94  CG1 VAL   74         ---     8  C6  UNL    1          3.738
+   26    64  CE1 PHE  113         ---     7  C5  UNL    1          3.813
+   27   106  NE1 TRP   81         ---     7  C5  UNL    1          3.573
+   28    43  CE1 TYR   76         ---     7  C5  UNL    1          3.650
+   29    41  CD1 TYR   76         ---     7  C5  UNL    1          3.639
+   30    34  O   GLY   39         ---     3  C1  UNL    1          3.808
+   31    33  C   GLY   39         ---     0  N1  UNL    1          3.545

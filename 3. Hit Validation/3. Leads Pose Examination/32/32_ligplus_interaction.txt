@@ -1,0 +1,69 @@
+List of protein-ligand interactions
+-----------------------------------
+
+
+
+
+PDB code: 32_complex
+==============
+
+
+Hydrogen bonds
+--------------
+
+       <----- A T O M   1 ----->       <----- A T O M   2 ----->
+
+       Atom Atom Res  Res              Atom Atom Res  Res
+        no  name name  no  Chain        no  name name  no  Chain  Distance
+    1     1  N1  UNL    1         ---    74  OD1 ASP  224          3.261
+    2    47  OH  TYR  194         ---     3  N3  UNL    1          3.190
+    3    66  OD1 ASH   37         ---     1  N1  UNL    1          2.976
+
+
+Non-bonded contacts
+-------------------
+
+       <----- A T O M   1 ----->       <----- A T O M   2 ----->
+
+       Atom Atom Res  Res              Atom Atom Res  Res
+        no  name name  no  Chain        no  name name  no  Chain  Distance
+    1    23  C20 UNL    1         ---    88  O   GLY  226          3.467
+    2    22  C19 UNL    1         ---    88  O   GLY  226          3.728
+    3    22  C19 UNL    1         ---    87  C   GLY  226          3.767
+    4     1  N1  UNL    1         ---    86  CA  GLY  226          3.256
+    5    10  C7  UNL    1         ---    47  OH  TYR  194          3.641
+    6     9  C6  UNL    1         ---    47  OH  TYR  194          3.553
+    7    12  C9  UNL    1         ---   135  NE  ARG  133          3.672
+    8    12  C9  UNL    1         ---   134  CD  ARG  133          3.762
+    9    17  C14 UNL    1         ---   154  CD1 ILE  123          3.635
+   10    18  C15 UNL    1         ---   102  CH2 TRP  120          3.781
+   11    19  C16 UNL    1         ---   100  CZ2 TRP  120          3.695
+   12    18  C15 UNL    1         ---   100  CZ2 TRP  120          3.849
+   13    24  C21 UNL    1         ---   146  CD1 ILE  115          3.893
+   14    18  C15 UNL    1         ---   125  CE1 PHE  113          3.606
+   15    17  C14 UNL    1         ---   125  CE1 PHE  113          3.796
+   16    28  C25 UNL    1         ---    83  NE2 GLN   78          3.879
+   17    26  C23 UNL    1         ---    83  NE2 GLN   78          3.824
+   18    25  C22 UNL    1         ---    83  NE2 GLN   78          3.483
+   19    30  O2  UNL    1         ---    82  CD  GLN   78          3.806
+   20    27  C24 UNL    1         ---    58  CZ  TYR   76          3.814
+   21    27  C24 UNL    1         ---    57  CE2 TYR   76          3.845
+   22    27  C24 UNL    1         ---    56  CE1 TYR   76          3.723
+   23    28  C25 UNL    1         ---    55  CD2 TYR   76          3.763
+   24    27  C24 UNL    1         ---    55  CD2 TYR   76          3.836
+   25    27  C24 UNL    1         ---    54  CD1 TYR   76          3.711
+   26    27  C24 UNL    1         ---    53  CG  TYR   76          3.797
+   27    15  C12 UNL    1         ---   115  CB  SER   40          3.656
+   28    13  C10 UNL    1         ---   115  CB  SER   40          3.711
+   29    15  C12 UNL    1         ---    35  O   GLY   39          3.670
+   30    14  C11 UNL    1         ---    35  O   GLY   39          3.684
+   31    10  C7  UNL    1         ---    35  O   GLY   39          3.834
+   32     9  C6  UNL    1         ---    35  O   GLY   39          3.655
+   33     8  C5  UNL    1         ---    35  O   GLY   39          3.509
+   34     7  C4  UNL    1         ---    35  O   GLY   39          3.624
+   35    29  O1  UNL    1         ---    34  C   GLY   39          3.877
+   36    29  O1  UNL    1         ---    33  CA  GLY   39          3.758
+   37     6  C3  UNL    1         ---    66  OD1 ASH   37          3.312
+   38     1  N1  UNL    1         ---    65  CG  ASH   37          3.642
+   39    19  C16 UNL    1         ---   109  CD1 LEU   35          3.456
+   40    18  C15 UNL    1         ---   109  CD1 LEU   35          3.474
