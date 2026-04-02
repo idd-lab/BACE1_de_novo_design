@@ -67,7 +67,7 @@ Note: The raw 100 ns explicit-solvent MD trajectories for the top candidates (tr
 
 5_Colab_Notebooks/ Summarizes all Colab Notebooks in LBDD pipeline and MD production, and post-MD processing workflow and procedure.
 
-6_Other_Codes_And_Data/ Contains Python scripts for specific procedures with instructions of use.
+Other Python scripts for specific procedures with instructions of use are stored in their respective folders (most scripts only require updating paths according to your local machine).
 
 
 📜 Citation & Usage
