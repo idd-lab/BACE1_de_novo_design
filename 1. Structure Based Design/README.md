@@ -22,3 +22,11 @@ The compressed folder includes:
 + Docking Score distribution graph of all 5,020 generated ligands 
 
 +SILE Validation plot against Docking Score and Ligand Efficiency and the fitting data (Figure4_Docking_Score_Distribution.pdf and fit_results_sile_validation.txt)
+
+*GUIDE TO REPRODUCE AUTOGROW4 RUN/SETUP:
+
+- Download and setup AutoGrow4 (https://github.com/durrantlab/autogrow4) according to the developer's instruction
+
+- Copy the vars.json from our dataset or create a new one, adjust paths according to your protein files, fragment libraries, and tools
+
+- How to apply the Size-Independent Ligand Efficiency score: REPLACE AutoGrow4's default lig_efficiency.py file with ours, and enable (rescore_lig_efficiency": true) in the vars.json file
