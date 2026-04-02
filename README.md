@@ -1,5 +1,5 @@
 Markdown
-# Integrating Structure-Based Genetic Algorithms and Reinforcement Learning for De Novo Design of Novel BACE1 Inhibitors
+# A Dual-Paradigm De Novo Design Workflow: Exploring Chemical Space via Parallel Ligand- and Structure-Based Approaches on BACE1
 
 [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-3100/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -7,10 +7,11 @@ Markdown
 
 **Independent Drug Discovery Lab (IDD Lab)** **Authors:** Thang T. Dang, Mai N. Luong
 
-This repository contains the official code, supplemental information, parameter files, and data summaries for the research article: *"Integrating Structure-Based Genetic Algorithms and Reinforcement Learning for De Novo Design of Novel BACE1 Inhibitors"*.
+This repository contains the official code, supplemental information, parameter files, and data summaries for the research article: *"A Dual-Paradigm De Novo Design Workflow: Exploring Chemical Space via Parallel Ligand- and Structure-Based Approaches on BACE1"*.
 
 ## 📖 Abstract
-Alzheimer’s disease (AD) remains a pressing neurodegenerative challenge, with β-secretase 1 (BACE1) serving as a primary therapeutic target. This repository hosts the dual-pronged generative framework that synergistically couples ligand-based reinforcement learning (RL) with structure-based genetic algorithm (GA) evolution to comprehensively explore novel chemical space. It includes all generated datasets, QSAR modeling scripts, molecular docking configurations, and explicit-solvent Molecular Dynamics (MD) / MM/GBSA validation data.
+Despite the rapid proliferation of generative algorithms, a persistent translational gap remains between computational method development and practical application in drug design, leading to a need for generalized, ready-to-deploy workflows. 
+This repository hosts the dual-pronged generative framework that synergistically couples ligand-based reinforcement learning (RL) with structure-based genetic algorithm (GA) evolution to comprehensively explore novel chemical space. It includes all generated datasets, QSAR modeling scripts, molecular docking configurations, and explicit-solvent Molecular Dynamics (MD) / MM/GBSA validation data.
 
 ## ⚙️ System Requirements & Installation
 
@@ -36,10 +37,7 @@ GROMACS (v2023.2 for preparation; v2024.1 for production dynamics)
 📂 Repository Structure
 The repository is organized into five primary modules corresponding to the methodological pipeline:
 
-0_Curated_Data/ Contains the foundational datasets for both generative pipelines. Includes the BACE1 inhibitors dataset curated from BindingDB (pK 
-i
-​
-  values), the prepared BACE1 protein target (4xxs_charged_minimized.pdb / .pdbqt), H++ server outputs, and fragment libraries utilized for both SBDD and LBDD.
+0_Curated_Data/ Contains the foundational datasets for both generative pipelines. Includes the BACE1 inhibitors dataset curated from BindingDB (pKi values), the prepared BACE1 protein target (4xxs_charged_minimized.pdb / .pdbqt), H++ server outputs, fragment libraries utilized for both SBDD and LBDD, and code for reproducibility.
 
 1_Structure_Based_Design/ Note: Due to file size constraints, the complete evolutionary trajectory data for the SBDD pathway is hosted externally on Zenodo. Contains the specific README and access protocols for the AutoGrow4 generational data.
 
@@ -47,9 +45,9 @@ i
 
 2_Ligand_Based_Design/ Houses the complete machine learning architecture. Includes the LBDD fragment library, training subsets, generated candidate pools, and independent rediscovery mapping. Contains three executable Google Colab notebooks: Data Processing, QSAR Modeling, and LSTM Molecule Generation / Reinforcement Learning fine-tuning.
 
-3_Hit_Validation/ Contains rigorous post-generation filtering data. Includes ADME and synthetic accessibility (SA) screening data, triplicate exhaustive docking logs and poses, Tanimoto similarity calculations for novelty assessment, and a comprehensive PLIP server interaction map. Included is the script utilized for standardizing candidate protonation states (set_pH_5.py).
+3_Hit_Validation/ Contains rigorous post-generation filtering data. Includes ADME and synthetic accessibility (SA) screening data, triplicate exhaustive docking logs and poses, Tanimoto similarity calculations for novelty assessment, and a comprehensive PLIP server interaction map. Included is the script utilized for standardizing candidate protonation states (set_pH_5.py), docking configuration (config.txt), and full docking instruction.
 
-4_Molecular_Dynamics/ Contains supporting analytical data for dynamic validation, including RMSD/RMSF graphs, H-bond occupancy data, and MM/GBSA energy decomposition summaries.
+4_Molecular_Dynamics/ Contains supporting analytical data for dynamic validation, including RMSD/RMSF graphs, H-bond occupancy data, and MM/GBSA energy decomposition summaries. Colab Notebooks for MD production are also provided.
 
 Note: The raw 100 ns explicit-solvent MD trajectories for the top candidates (triplicates) exceed GitHub storage limits and are permanently archived on Zenodo:
 
@@ -62,6 +60,15 @@ Note: The raw 100 ns explicit-solvent MD trajectories for the top candidates (tr
 + Compound 96: 10.5281/zenodo.18851235
 
 + Compound 73: 10.5281/zenodo.18851674
+  
++ Compound 104: 10.5281/zenodo.19382117
+  
++ Verubecestat: 10.5281/zenodo.19384070
+
+5_Colab_Notebooks/ Summarizes all Colab Notebooks in LBDD pipeline and MD production, and post-MD processing workflow and procedure.
+
+6_Other_Codes_And_Data/ Contains Python scripts for specific procedures with instructions of use.
+
 
 📜 Citation & Usage
 If you utilize the code, generative models, or raw simulation data provided in this repository, please cite the main manuscript alongside the specific Zenodo DOIs associated with the datasets.
@@ -69,7 +76,7 @@ If you utilize the code, generative models, or raw simulation data provided in t
 @article{Dang2026BACE1,
   title={Integrating Structure-Based Genetic Algorithms and Reinforcement Learning for De Novo Design of Novel BACE1 Inhibitors},
   author={Dang, Thang T. and Luong, Mai N.},
-  journal={Journal of Chemical Information and Modeling},
-  year={2026},
+  journal={Chemrxiv},
+  year={2025},
   note={Submitted}
 }
