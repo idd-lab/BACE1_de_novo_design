@@ -1,0 +1,207 @@
+# ==========================================
+# STEP 0: INSTALL RDKIT & SETUP ENVIRONMENT
+# ==========================================
+# This installs RDKit quietly in the Colab environment
+!pip install rdkit > /dev/null
+print("✅ RDKit installed successfully.")
+
+import pandas as pd
+import numpy as np
+from rdkit import Chem
+from rdkit.Chem.SaltRemover import SaltRemover
+from rdkit.Chem import Descriptors
+from google.colab import files
+import io
+import os
+
+# ================= CONFIGURATION =================
+# Thresholds
+DIFF_THRESHOLD = 0.7
+CLUSTER_TOLERANCE = 0.5
+MW_CUTOFF = 700
+# =================================================
+
+def convert_nm_to_pki(ki_nm):
+    """Convert Ki (nM) to pKi = 9 - log10(Ki_nM)."""
+    try:
+        val = float(ki_nm)
+        if val <= 0: return None
+        return 9 - np.log10(val)
+    except:
+        return None
+
+def is_organic(mol):
+    """Check if molecule has at least one Carbon atom."""
+    if mol is None: return False
+    return any(atom.GetSymbol() == 'C' for atom in mol.GetAtoms())
+
+def desalt_and_canonicalize(smiles_str, remover):
+    """1. Parse -> 2. Check Organic -> 3. Desalt -> 4. Check MW -> 5. Canonicalize"""
+    try:
+        mol = Chem.MolFromSmiles(smiles_str)
+        if mol is None: return None, "Invalid SMILES"
+
+        if not is_organic(mol): return None, "Inorganic (Pre-desalt)"
+
+        # Remove salts
+        mol = remover.StripMol(mol, dontRemoveEverything=True)
+
+        if not is_organic(mol): return None, "Inorganic (Post-desalt)"
+
+        # --- Peptide/MW Filter ---
+        if Descriptors.MolWt(mol) > MW_CUTOFF:
+            return None, f"MW > {MW_CUTOFF} (Likely Peptide)"
+
+        can_smiles = Chem.MolToSmiles(mol, isomericSmiles=True)
+        return can_smiles, "Success"
+    except:
+        return None, "Error"
+
+def resolve_pki_group(group):
+    """Resolve multiple pKi values for a single SMILES."""
+    values = sorted(group['pKi'].tolist())
+    n = len(values)
+
+    if n == 1:
+        return values[0], "Singleton"
+
+    val_range = values[-1] - values[0]
+
+    # CASE 1: Tight Cluster
+    if val_range <= DIFF_THRESHOLD:
+        return np.mean(values), f"Mean (n={n}, range={val_range:.2f})"
+
+    # CASE 2: High Variance - Consensus
+    median_val = np.median(values)
+    cluster = [v for v in values if abs(v - median_val) <= CLUSTER_TOLERANCE]
+
+    if len(cluster) >= n * 0.6:
+        return np.mean(cluster), f"Consensus Cluster (n={n}, kept={len(cluster)})"
+
+    # CASE 3: Discordant
+    return None, f"Discordant (Range: {values[0]:.2f}-{values[-1]:.2f})"
+
+# ==========================================
+# MAIN EXECUTION
+# ==========================================
+def main():
+    print("\n--- BACE1 Inhibitor Data Curation Pipeline (Colab Version) ---")
+
+    # 1. UPLOAD FILE
+    print("Please upload your 'raw_inhibitors_nM.txt' file now:")
+    uploaded = files.upload()
+
+    filename = next(iter(uploaded))
+    print(f"Processing: {filename}")
+
+    # Read file from memory
+    try:
+        df = pd.read_csv(io.BytesIO(uploaded[filename]), sep='\t')
+    except Exception as e:
+        print(f"CRITICAL ERROR reading file: {e}")
+        return
+
+    print(f"Raw rows: {len(df)}")
+
+    # 2. CONVERT TO pKi
+    valid_data = []
+    rejected_log = []
+
+    for idx, row in df.iterrows():
+        line_num = idx + 2
+        smiles = str(row['Ligand SMILES']).strip()
+        ki_str = str(row['Ki (nM)']).strip()
+
+        if '<' in ki_str or '>' in ki_str:
+            rejected_log.append(f"Line {line_num}: Censored/Inequality ({ki_str})")
+            continue
+
+        pki = convert_nm_to_pki(ki_str)
+        if pki is None:
+            rejected_log.append(f"Line {line_num}: Invalid Ki Value ({ki_str})")
+            continue
+
+        valid_data.append({'Line': line_num, 'Original_SMILES': smiles, 'pKi': pki})
+
+    inter_df = pd.DataFrame(valid_data)
+    print(f"Valid pKi entries: {len(inter_df)}")
+
+    # 3. CURATION & MW FILTER
+    print(f"Step 3: Canonicalizing, Desalting, and Filtering (MW < {MW_CUTOFF})...")
+    remover = SaltRemover()
+    curated_data = []
+
+    for idx, row in inter_df.iterrows():
+        can_smiles, status = desalt_and_canonicalize(row['Original_SMILES'], remover)
+
+        if status == "Success":
+            curated_data.append({
+                'SMILES': can_smiles,
+                'pKi': row['pKi'],
+                'Original_Line': row['Line']
+            })
+        else:
+            rejected_log.append(f"Line {row['Line']}: {status} ({row['Original_SMILES']})")
+
+    curated_df = pd.DataFrame(curated_data)
+    print(f"Valid Organic Structures: {len(curated_df)}")
+
+    # 4. DUPLICATE RESOLUTION
+    print("Step 4: Resolving Duplicates...")
+    final_rows = []
+    grouped = curated_df.groupby('SMILES')
+    discordant_count = 0
+
+    for smiles, group in grouped:
+        final_pki, note = resolve_pki_group(group)
+        if final_pki is not None:
+            final_rows.append({
+                'SMILES': smiles,
+                'pKi': round(final_pki, 4),
+                'Resolution_Note': note
+            })
+        else:
+            discordant_count += 1
+            rejected_log.append(f"Cluster Rejected ({note}): {smiles}")
+
+    final_df = pd.DataFrame(final_rows)
+
+    # 5. OUTPUT AND DOWNLOAD
+    print("\n=== FINAL SUMMARY ===")
+    print(f"Final Unique Molecules:       {len(final_df)}")
+    print(f"Discordant Groups Dropped:    {discordant_count}")
+
+    output_csv = 'final_bace1_pKi.csv'
+    report_txt = 'cleaning_report.txt'
+
+    final_df.to_csv(output_csv, index=False)
+
+    with open(report_txt, 'w') as f:
+        f.write("=== REJECTED ENTRIES & GROUPS ===\n")
+        for line in rejected_log:
+            f.write(line + "\n")
+
+    print(f"Downloading {output_csv} and {report_txt}...")
+    files.download(output_csv)
+    files.download(report_txt)
+
+if __name__ == "__main__":
+    main()
+
+✅ RDKit installed successfully.
+
+--- BACE1 Inhibitor Data Curation Pipeline (Colab Version) ---
+Please upload your 'raw_inhibitors_nM.txt' file now:
+No file chosen Upload widget is only available when the cell has been executed in the current browser session. Please rerun this cell to enable.
+Saving raw_inhibitors_nM.txt to raw_inhibitors_nM.txt
+Processing: raw_inhibitors_nM.txt
+Raw rows: 2572
+Valid pKi entries: 2537
+Step 3: Canonicalizing, Desalting, and Filtering (MW < 700)...
+Valid Organic Structures: 2407
+Step 4: Resolving Duplicates...
+
+=== FINAL SUMMARY ===
+Final Unique Molecules:       2130
+Discordant Groups Dropped:    10
+Downloading final_bace1_pKi.csv and cleaning_report.txt...
