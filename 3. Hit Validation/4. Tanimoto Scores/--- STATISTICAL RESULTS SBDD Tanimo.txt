@@ -1,0 +1,6 @@
+--- STATISTICAL RESULTS: SBDD Tanimoto_max ---
+Total Evaluated: 5020
+Range:           0.0617 to 0.4286
+Mean:            0.1776
+SD:              0.0364
+SEM:             0.0005
