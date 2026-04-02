@@ -1,0 +1,17 @@
+(autogrow_env) yourusername@DESKTOP-4CFCO1H:/mnt/c/Users/THANG/Desktop/qsar/cleaned/Designed_Molecules_cleaned$ python3 calculate_tanimoto.py
+Loading data...
+
+--- Entire Dataset ---
+Range: [0.5294, 1.0000] (Span: 0.4706)
+Mean:  0.6544
+SD:    0.0882
+
+--- Zone A ---
+Range: [0.6939, 1.0000] (Span: 0.3061)
+Mean:  0.7680
+SD:    0.0586
+
+--- Zone B ---
+Range: [0.5294, 1.0000] (Span: 0.4706)
+Mean:  0.6097
+SD:    0.0490

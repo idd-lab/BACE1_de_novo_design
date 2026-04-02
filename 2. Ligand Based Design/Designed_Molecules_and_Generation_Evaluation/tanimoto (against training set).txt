@@ -1,0 +1,20 @@
+(autogrow_env) yourusername@DESKTOP-4CFCO1H:/mnt/c/Users/THANG/Desktop/qsar/cleaned/Designed_Molecules_cleaned$ python3 tanimoto.py
+Reading data from /mnt/c/Users/THANG/Desktop/qsar/cleaned/Designed_Molecules_cleaned/candidates_zoned_full_CNS.csv...
+
+--- All Compounds (N = 5389) ---
+Range: 0.5294 to 0.9800
+Mean:  0.6515
+SD:    0.0862
+SEM:   0.0012
+
+--- Zone A Compounds (N = 1522) ---
+Range: 0.6939 to 0.9800
+Mean:  0.7640
+SD:    0.0557
+SEM:   0.0014
+
+--- Zone B Compounds (N = 3867) ---
+Range: 0.5294 to 0.6935
+Mean:  0.6072
+SD:    0.0468
+SEM:   0.0008
