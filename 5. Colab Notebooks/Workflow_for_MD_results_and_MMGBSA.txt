@@ -1,0 +1,33 @@
+gmx make_ndx -f md_rep1.tpr -o index.ndx
+1 | 13 
+q
+
+# 1. Center the Protein (Output: md_centered.xtc)
+echo "1 0" | gmx trjconv -s md_rep1.tpr -f md_rep1.xtc -o md_centered.xtc -pbc mol -ur compact -center
+(Protein-System)
+
+# 2. Fit Backbone to remove rotation (Output: md_processed.xtc)
+echo "4 0" | gmx trjconv -s md_rep1.tpr -f md_centered.xtc -o md_processed.xtc -fit rot+trans
+(Backbone-UNL)
+
+
+echo "4 13" | gmx rms -s md_rep1.tpr -f md_processed.xtc -o rmsd_ligand.xvg -tu ns
+(Backbone - UNL)
+
+conda run -n matplotlib_env python plot_rmsd.py
+
+echo "4 4" | gmx rms -s md_rep1.tpr -f md_processed.xtc -o rmsd_protein.xvg -tu ns
+(Backbone-Backbone)
+
+conda run -n matplotlib_env python plot_protein_rmsd.py
+
+Create the mmpbsa.in, ensure frames, intervals, etc
+
+mpirun -np 6 gmx_MMPBSA -O -i mmpbsa.in -cs md_rep1.tpr -ci index.ndx -cg 1 13 -ct md_processed.xtc -cp topol.top
+
+
+Grafting XTC:
+gmx trjcat -f md_rep1.xtc md_rep1.part0002.xtc md_rep1.part0003.xtc -o md_rep1_FULL.xtc
+
+Check frame: 
+gmx check -f md_rep1_FULL.xtc 2>&1 | grep "Step"
