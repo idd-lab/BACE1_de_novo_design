@@ -1,0 +1,1 @@
+This folder contains all information and models regarding the QSAR model. Specific generation, logging, or result output are in the qsar_cleaned_2.docx or in the Colab Notebook.

@@ -1,0 +1,11 @@
+SMILES	Predicted_pKi	Max_Sim_AD	Zone
+CC#Cc1cncc(-c2cc(Cl)c([C@]3(C)CS(=O)(=O)N(C)C(=N)N3)s2)c1	7.246934	0.696969697	Zone A (Safe)
+CN1C(=O)C(c2cccc(-c3cncc(Cl)c3)c2)(C2CC2)N=C1N	6.9062476	0.823529412	Zone A (Safe)
+CN1C(=O)C(c2cccc(-c3cncc(F)c3)c2)(C2CC2)N=C1N	6.8905163	0.690909091	Zone B (Novel)
+C[C@@]1(c2sc(-c3cccc(C#N)c3)cc2Cl)Cc2ncncc2C(=N)N1	6.8302746	0.806451613	Zone A (Safe)
+CN1C(=N)N[C@](C)(c2sc(-c3ccc(-c4ccccc4)[nH]3)cc2Cl)CS1(=O)=O	6.715828	0.770491803	Zone A (Safe)
+CN1C(=O)C(c2cccc(-c3cccnc3)c2)(C2CC2)N=C1N	6.6866364	0.730769231	Zone A (Safe)
+CN1C(=O)C(c2cccc(-c3cccc(Cl)c3)c2)(C2CCC2)N=C1N	6.3803377	0.9375	Zone A (Safe)
+CN1C(=O)C(c2cccc(-c3cccc(Cl)c3)c2)(C2CCCC2)N=C1N	6.378836	0.978723404	Zone A (Safe)
+C[C@@]1(c2sc(Br)cc2F)CS(=O)(=O)[C@@](C)(c2ccccn2)C(=N)N1	6.2365437	0.661016949	Zone B (Novel)
+CN1C(=N)N[C@](C)(c2sc3c(-c4ccc(-c5ccncc5)cc4)cccc3c2F)CS1(=O)=O	6.1096334	0.796875	Zone A (Safe)
