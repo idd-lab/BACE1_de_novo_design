@@ -3,7 +3,7 @@ import re
 import csv
 
 # Define the directory containing the log files
-directory = r"/mnt/d/Archive/Re_Docking/docking_results_3/"
+directory = "docking_results_3"    #Adjust to your docked folder
 
 # Initialize a list to store ligand names and their best docking scores
 results = []
