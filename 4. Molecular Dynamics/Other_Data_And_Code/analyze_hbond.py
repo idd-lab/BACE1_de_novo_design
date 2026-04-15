@@ -3,8 +3,8 @@ import numpy as np
 import os
 
 # --- 1. CONFIGURATION ---
-INPUT_FILE = "/mnt/d/Archive/4. Molecular Dynamics/h_bond_occupancy_all.txt"
-OUTPUT_CSV = "/mnt/d/Archive/4. Molecular Dynamics/Table_S4_HBond_Summary.csv"
+INPUT_FILE = "h_bond_occupancy_all.txt"
+OUTPUT_CSV = "Table_S4_HBond_Summary.csv"
 
 def extract_protein_residue(row):
     """
