@@ -6,8 +6,8 @@ import matplotlib.lines as mlines
 import os
 
 # --- WSL Paths ---
-molecules_csv = "/mnt/d/Archive/github_data/3. Hit Validation/1. ADME/All_hits_ADME.csv"
-output_image = "/mnt/d/Archive/github_data/3. Hit Validation/1. ADME/BOILED_Egg_All_Hits_JCIM.png"
+molecules_csv = "All_hits_ADME.csv"
+output_image = "BOILED_Egg_All_Hits_JCIM.png"
 
 # --- Parametric Ellipse Generator ---
 # Preserves mathematical integrity from Daina & Zoete (2016) Figures S1 & S2
