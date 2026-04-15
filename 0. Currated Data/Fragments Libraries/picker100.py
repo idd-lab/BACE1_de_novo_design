@@ -52,6 +52,6 @@ def main(input_file, output_file, num_to_pick=100):    #Modify to 1000 for LBDD 
 
 # Run the script with your file paths
 if __name__ == "__main__":
-    input_file = fragments_from_inhibitors.smi    #Modify this according to your needs
-    output_file = selected_from_inbt_100.smi
+    input_file = "fragments_from_inhibitors.smi"    #Modify this according to your needs
+    output_file = "selected_from_inbt_100.smi"
     main(input_file, output_file, num_to_pick=100)    #Modify to 1000 for LBDD
