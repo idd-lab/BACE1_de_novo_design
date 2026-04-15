@@ -6,8 +6,8 @@ from rdkit.Chem import rdMolDescriptors
 from rdkit import DataStructs
 
 # --- 1. CONFIGURATION (WSL Paths) ---
-SBDD_FILE = "/mnt/d/Archive/For_Writing_Paper/All_Molecules/Run_All/all_canonical_unique_SBDD.txt"
-INHIBITORS_FILE = "/mnt/d/Archive/For_Writing_Paper/All_Molecules/Run_All/inhibitors_pKi_M_cleaned.txt"
+SBDD_FILE = "all_canonical_unique_SBDD.txt"
+INHIBITORS_FILE = "inhibitors_pKi_M_cleaned.txt"
 
 def load_smiles(filepath):
     """
