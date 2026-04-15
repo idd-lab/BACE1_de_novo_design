@@ -3,8 +3,8 @@ import dimorphite_dl
 import csv
 
 # Define paths for input and output files
-input_file = '/mnt/c/Users/THANG/Desktop/2. In-Depth Docking/re_dock.smi'
-output_file = '/mnt/c/Users/THANG/Desktop/2. In-Depth Docking/re_dock_pH_blood.smi'
+input_file = All_hits.smi    #Adjust to your local files
+output_file = All_hits_pH_blood.smi
 
 # Define the pH and precision settings
 target_ph = 7.4
