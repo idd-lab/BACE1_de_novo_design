@@ -3,8 +3,8 @@ import dimorphite_dl
 import csv
 
 # Define paths for input and output files
-input_file = '/mnt/c/Users/THANG/Desktop/2. In-Depth Docking/re_dock.smi'
-output_file = '/mnt/c/Users/THANG/Desktop/2. In-Depth Docking/re_dock_pH5.smi'
+input_file = All_hits.smi     #Adjust paths to your local files
+output_file = All_hits_pH5.smi
 
 # Define the pH and precision settings
 target_ph = 5.0
