@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Define WSL/Ubuntu Path
-file_path = "/mnt/c/Users/THANG/Desktop/qsar/cleaned/Designed_Molecules_cleaned/candidates_with_max_tanimoto_LBDD.csv"
+file_path = "candidates_with_max_tanimoto_LBDD.csv"
 
 def calculate_and_print_stats(series, group_name):
     """Calculates and prints the range, mean, and standard deviation for a given pandas Series."""
