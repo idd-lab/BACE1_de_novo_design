@@ -8,7 +8,7 @@ import os
 
 # --- 1. CONFIGURATION (EDIT THIS SECTION) ---
 
-# Updated to WSL paths and the correct 5 ligands
+# Updated to WSL paths and the correct 5 ligands in your local machine
 LIGAND_FILES = {
     '14XS': [
         "/mnt/d/4. Molecular Dynamics/14XS/rep_1/CLEAN_FINAL_DECOMP_MMPBSA.csv",
