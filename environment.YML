@@ -23,6 +23,8 @@ dependencies:
   - openmm
   - pdbfixer=1.10
   - openbabel
+  - ambertools     # Provides Antechamber for ligand parameterization
+  - acpype         # AnteChamber PYthon Parser interfacE
   # PyPI specific packages
   - pip:
     - dimorphite-dl==2.0.2
