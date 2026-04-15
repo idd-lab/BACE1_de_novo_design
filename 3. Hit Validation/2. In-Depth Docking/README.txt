@@ -8,4 +8,4 @@ Workflow Guide:
 - Docking parameters: Customizable in config.txt
 - dock_ligands.py: dock ligands using AutoDock Vina
 - analyze_docking.py: summarize docking scores.
-- average_docking.py: calculate average docking scores and standard deviation.
+- average_docking.py: calculate average docking scores and standard deviation. You must copy all rep's docked csv content onto the file Docking_Summary.csv in the given format to use.
