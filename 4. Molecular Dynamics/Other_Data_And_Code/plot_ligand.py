@@ -31,7 +31,7 @@ def load_xvg(filepath):
 
 # --- Configuration ---
 
-# 1. Define all data, converting Windows paths to Ubuntu/WSL paths
+# 1. Define all data, converting Windows paths to Ubuntu/WSL paths, update to paths according to your local machine
 LIGAND_DATA = [
     {
         "name": "Ligand 14XS",
