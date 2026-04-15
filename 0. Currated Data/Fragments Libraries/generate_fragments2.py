@@ -218,8 +218,8 @@ def generate_fragments(input_file, output_file, min_mw=100, max_mw=150):
     return len(seen), error_count
 
 if __name__ == "__main__":
-    input_file = inhibitors_for_fragmentations.smi    #Update this file if you want to fragment other libraries
-    output_file = fragment_from_inhibitors.smi
+    input_file = "inhibitors_for_fragmentations.smi"    #Update this file if you want to fragment other libraries
+    output_file = "fragment_from_inhibitors.smi"
     
     n_fragments, n_errors = generate_fragments(
         input_file=input_file,
