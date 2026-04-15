@@ -7,8 +7,8 @@ import seaborn as sns
 sns.set_theme(style="ticks", context="paper", font_scale=1.3)
 
 # 2. Define Paths (Ubuntu/WSL format)
-input_path = "/mnt/d/Archive/For_Writing_Paper/All_Molecules/Run_All/SBDD_Tanimoto_max.csv"
-output_path = "/mnt/d/Archive/For_Writing_Paper/All_Molecules/Run_All/Figure_SBDD_Generative_Novelty_Distribution.png"
+input_path = "SBDD_Tanimoto_max.csv"
+output_path = "Figure_SBDD_Generative_Novelty_Distribution.png"
 
 # 3. Load Data
 df = pd.read_csv(input_path)
