@@ -2,11 +2,11 @@ import os
 import subprocess
 
 # Define paths (adjusted for WSL)
-pdb_dir = "/mnt/c/Users/THANG/Desktop/Lead_Optimization_76/pdb_files"
-pdbqt_dir = "/mnt/c/Users/THANG/Desktop/Lead_Optimization_76/pdbqt_files"
-docking_results_dir = "/mnt/c/Users/THANG/Desktop/Lead_Optimization_76/docking_results"
-config_file = "/mnt/c/Users/THANG/Desktop/Lead_Optimization_76/config.txt"
-receptor_path = "/mnt/c/Users/THANG/Desktop/Lead_Optimization_76/4xxs_charged_minimized.pdbqt"
+pdb_dir = pdb_files
+pdbqt_dir = pdbqt_files
+docking_results_dir = docking_results    #Adjust for replicates
+config_file = config.txt
+receptor_path = 4xxs_charged_minimized.pdbqt    #Adjust to your protein PDBQT
 
 # Create directories if they don't exist
 for directory in [pdbqt_dir, docking_results_dir]:
