@@ -1,8 +1,8 @@
 import pandas as pd
 
 # 1. Define WSL/Ubuntu Paths
-input_path = "/mnt/d/Archive/Re_Docking/Docking_Scores.xlsx"
-output_path = "/mnt/d/Archive/Re_Docking/Docking_Scores_Summary.csv"
+input_path = "Docking_Scores.xlsx"    #Copy your summaries to an Excel file for analysis, put the file here
+output_path = "Docking_Scores_Summary.csv"
 
 print("Loading raw docking scores...")
 # 2. Load Data
