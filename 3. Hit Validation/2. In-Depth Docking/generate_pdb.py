@@ -2,8 +2,8 @@ import os
 import subprocess
 
 # Define paths
-input_file = "/mnt/c/Users/THANG/Desktop/Lead_Optimization_76/re_dock_pH5.smi"
-output_dir = "/mnt/c/Users/THANG/Desktop/Lead_Optimization_76/pdb_files"
+input_file = All_hits_pH5.smi
+output_dir = pdb_files
 
 # Create output directory if it doesn’t exist
 os.makedirs(output_dir, exist_ok=True)
