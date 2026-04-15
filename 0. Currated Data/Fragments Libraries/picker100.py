@@ -33,7 +33,7 @@ def write_selected_smiles(mols, selected_indices, output_file):
             f.write(f"{smi}\n")
 
 # Main function to run the process
-def main(input_file, output_file, num_to_pick=100):
+def main(input_file, output_file, num_to_pick=100):    #Modify to 1000 for LBDD or to your use
     # Read SMILES
     smiles_list = read_smiles(input_file)
     print(f"Loaded {len(smiles_list)} inhibitors from {input_file}")
@@ -52,6 +52,6 @@ def main(input_file, output_file, num_to_pick=100):
 
 # Run the script with your file paths
 if __name__ == "__main__":
-    input_file = r"C:\Users\Admin\Desktop\BACE1_de_novo_design\method1.smi"
-    output_file = r"C:\Users\Admin\Desktop\BACE1_de_novo_design\selected_method1_100.smi"
-    main(input_file, output_file, num_to_pick=100)
+    input_file = fragments_from_inhibitors.smi    #Modify this according to your needs
+    output_file = selected_from_inbt_100.smi
+    main(input_file, output_file, num_to_pick=100)    #Modify to 1000 for LBDD
