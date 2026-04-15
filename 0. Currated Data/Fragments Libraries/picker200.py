@@ -52,6 +52,6 @@ def main(input_file, output_file, num_to_pick=2400):
 
 # Run the script with your file paths
 if __name__ == "__main__":
-    input_file = r"C:\Users\Admin\Desktop\BACE1_de_novo_design\fragment_generation_archive\fragmentsX.smi"
-    output_file = r"C:\Users\Admin\Desktop\BACE1_de_novo_design\selected_200.smi"
-    main(input_file, output_file, num_to_pick=200)
+    input_file = AutoGrow_default_ZINC_lib_100_150.smi
+    output_file = selected_default_200.smi
+    main(input_file, output_file, num_to_pick=200)    #Modify to your need (to 2000 for LBDD)
