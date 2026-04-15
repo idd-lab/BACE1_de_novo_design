@@ -218,8 +218,8 @@ def generate_fragments(input_file, output_file, min_mw=100, max_mw=150):
     return len(seen), error_count
 
 if __name__ == "__main__":
-    input_file = r"C:\Users\Admin\Desktop\BACE1_de_novo_design\fragment_generation_archive\inhibitors_for_fragmentations.smi"
-    output_file = r"C:\Users\Admin\Desktop\BACE1_de_novo_design\fragment_generation_archive\method1.smi"
+    input_file = inhibitors_for_fragmentations.smi    #Update this file if you want to fragment other libraries
+    output_file = fragment_from_inhibitors.smi
     
     n_fragments, n_errors = generate_fragments(
         input_file=input_file,
