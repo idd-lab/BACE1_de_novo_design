@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 # --- 1. CONFIGURATION ---
-INPUT_FILE = "h_bond_occupancy_all.txt"
+INPUT_FILE = "h_bond_occupancy_all.txt"    #Copy and paste all VMD H-bond analysis onto this file in the given format
 OUTPUT_CSV = "Table_S4_HBond_Summary.csv"
 
 def extract_protein_residue(row):
