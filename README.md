@@ -21,7 +21,8 @@ To ensure full reproducibility, the Python environment can be perfectly reconstr
    ```bash
    git clone [https://github.com/idd-lab/BACE1_de_novo_design.git](https://github.com/idd-lab/BACE1_de_novo_design.git)
    cd BACE1_de_novo_design
-Install the Conda environment:
+   
+2. **Install Conda environment:**
 
 Bash
 conda env create -f environment.yml
@@ -33,6 +34,21 @@ AutoDock Vina (v1.2.3 / v1.2.5)
 AutoGrow4 (v4.0.3)
 
 GROMACS (v2023.2 for preparation; v2024.1 for production dynamics)
+
+VMD (v1.9.3) - Required for H-bond occupancy analysis
+
+UCSF ChimeraX (v1.11.1) - Required for structural alignment
+
+LigPlot+ (v2.3.1) - Required for 2D interaction mapping
+
+🌐 Web Servers Utilized
+Certain steps in the validation cascade were executed via public web servers:
+
+H++ Server: For predicting optimal active-site protonation states at pH 5.0. (http://newbiophysics.cs.vt.edu/H++/)
+
+SwissADME: For BOILED-Egg BBB permeability and Synthetic Accessibility (SA) filtering. (https://www.swissadme.ch/)
+
+PLIP Server: For automated 3D protein-ligand interaction profiling. (https://plip-tool.biotec.tu-dresden.de/plip-web/plip/index)
 
 📂 Repository Structure
 The repository is organized into five primary modules corresponding to the methodological pipeline:
@@ -74,9 +90,9 @@ Other Python scripts for specific procedures with instructions of use are stored
 If you utilize the code, generative models, or raw simulation data provided in this repository, please cite the main manuscript alongside the specific Zenodo DOIs associated with the datasets.
 
 @article{Dang2026BACE1,
-  title={Integrating Structure-Based Genetic Algorithms and Reinforcement Learning for De Novo Design of Novel BACE1 Inhibitors},
+  title={A Dual-Paradigm De Novo Design Workflow: Exploring Chemical Space via Parallel Ligand- and Structure-Based Approaches on BACE1},
   author={Dang, Thang T. and Luong, Mai N.},
-  journal={Chemrxiv},
-  year={2025},
-  note={Submitted}
+  journal={Journal of Computational Chemistry},
+  year={2026},
+  note={Under Review}
 }
