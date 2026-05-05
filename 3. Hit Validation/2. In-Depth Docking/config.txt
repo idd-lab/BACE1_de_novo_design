@@ -1,0 +1,10 @@
+receptor = /mnt/c/Users/THANG/Desktop/Lead_Optimization_76/4xxs_charged_minimized.pdbqt
+center_x = 18.099
+center_y = -37.061
+center_z = 10.732
+size_x = 24.0
+size_y = 22.0
+size_z = 19.5
+exhaustiveness = 200
+num_modes = 50
+energy_range = 3.0
