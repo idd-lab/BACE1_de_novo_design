@@ -1,5 +1,5 @@
 Markdown
-# A Dual-Paradigm De Novo Design Workflow: Exploring Chemical Space via Parallel Ligand- and Structure-Based Approaches on BACE1
+# Algorithmically Constrained Dual-Paradigm De Novo Design: Exploring Chemical Space via Parallel Ligand- and Structure-Based Workflow Validated on BACE1
 
 [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-3100/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -7,7 +7,7 @@ Markdown
 
 **Independent Drug Discovery Lab (IDD Lab)** **Authors:** Thang T. Dang, Mai N. Luong
 
-This repository contains the official code, supplemental information, parameter files, and data summaries for the research article: *"A Dual-Paradigm De Novo Design Workflow: Exploring Chemical Space via Parallel Ligand- and Structure-Based Approaches on BACE1"*.
+This repository contains the official code, supplemental information, parameter files, and data summaries for the research article: *"Algorithmically Constrained Dual-Paradigm De Novo Design: Exploring Chemical Space via Parallel Ligand- and Structure-Based Workflow Validated on BACE1"*.
 
 ## 📖 Abstract
 Despite the rapid proliferation of generative algorithms, a persistent translational gap remains between computational method development and practical application in drug design, leading to a need for generalized, ready-to-deploy workflows. 
