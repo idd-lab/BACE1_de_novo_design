@@ -5,7 +5,7 @@ The complete dataset of Molecular Dynamics of four compounds 14XS, 32, 80, and 4
 Specific DOIs to the respective Zenodo archives:
 + 14XS: 10.5281/zenodo.20141885 (https://zenodo.org/records/20141885)
 + 32: 10.5281/zenodo.17824339 (https://zenodo.org/records/17824339)
-+ 41: 10.5281/zenodo.17825420 (https://zenodo.org/records/17825420)
++ 41: 10.5281/zenodo.20186691 (https://zenodo.org/records/20186691)
 + 96: 10.5281/zenodo.18851235 (https://zenodo.org/records/18851235)
 + 73: 10.5281/zenodo.18851674 (https://zenodo.org/records/18851674)
 
