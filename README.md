@@ -67,7 +67,7 @@ The repository is organized into five primary modules corresponding to the metho
 
 Note: The raw 100 ns explicit-solvent MD trajectories for the top candidates (triplicates) exceed GitHub storage limits and are permanently archived on Zenodo:
 
-+ Compound 14XS: 10.5281/zenodo.17824216
++ Compound 14XS: 10.5281/zenodo.20141885
 
 + Compound 32: 10.5281/zenodo.17824339
 
