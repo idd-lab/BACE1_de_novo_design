@@ -71,7 +71,7 @@ Note: The raw 100 ns explicit-solvent MD trajectories for the top candidates (tr
 
 + Compound 32: 10.5281/zenodo.17824339
 
-+ Compound 41: 10.5281/zenodo.17825420
++ Compound 41: 10.5281/zenodo.20186691
 
 + Compound 96: 10.5281/zenodo.18851235
 
