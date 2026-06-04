@@ -90,9 +90,9 @@ Other Python scripts for specific procedures with instructions of use are stored
 If you utilize the code, generative models, or raw simulation data provided in this repository, please cite the main manuscript alongside the specific Zenodo DOIs associated with the datasets.
 
 @article{Dang2026BACE1,
-  title={A Dual-Paradigm De Novo Design Workflow: Exploring Chemical Space via Parallel Ligand- and Structure-Based Approaches on BACE1},
+  title={Algorithmically Constrained Dual-Paradigm De Novo Design: Exploring Chemical Space via Parallel Ligand- and Structure-Based Workflow Validated on BACE1},
   author={Dang, Thang T. and Luong, Mai N.},
-  journal={Journal of Computational Chemistry},
+  journal={Molecular Informatics},
   year={2026},
   note={Under Review}
 }
